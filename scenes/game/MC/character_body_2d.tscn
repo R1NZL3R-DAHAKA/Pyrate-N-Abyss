@@ -1,20 +1,20 @@
 [gd_scene load_steps=3 format=3 uid="uid://3md6blydppbl"]
 
-[ext_resource type="Texture2D" uid="uid://bygo1wx6iuss6" path="res://Assests/GothicVaniaSet/spritesheets/hat-man-idle.png" id="1_xxfc6"]
+[ext_resource type="Texture2D" uid="uid://lgdoy48se53u" path="res://Assests/Colour1 Knight/Outline/120x80_PNGSheets/_Idle.png" id="1_jm361"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_naooy"]
-size = Vector2(13, 45)
+size = Vector2(17.5, 35.5)
 
 [node name="CharacterBody2D" type="CharacterBody2D"]
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 position = Vector2(94, 36)
-texture = ExtResource("1_xxfc6")
-hframes = 4
+texture = ExtResource("1_jm361")
+hframes = 10
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Sprite2D"]
 root_node = NodePath("../..")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(94.5, 39.5)
+position = Vector2(89.25, 58.75)
 shape = SubResource("RectangleShape2D_naooy")
