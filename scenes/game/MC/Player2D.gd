@@ -26,7 +26,9 @@ func _physics_process(delta):
 		sprite.flip_h = (direction == -1)
 	
 	# Attacks
-	
+	if Input.is_action_just_pressed("attack") and is_on_floor():
+		ap.play("attack1")
+		
 
 	update_animations(direction)
 	move_and_slide()
@@ -43,5 +45,3 @@ func update_animations(direction):
 			ap.play("jump")
 		elif velocity.y > 0:
 			ap.play("fall")
-		else:
-			pass
