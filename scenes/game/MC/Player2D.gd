@@ -20,16 +20,18 @@ func _physics_process(delta):
 		velocity.y = JUMP_VELOCITY
 
 	# Get the input direction and handle the movement/deceleration.
-	# As good practice, you should replace UI actions with custom gameplay actions.
 	var direction = Input.get_axis("move_left", "move_right")
 	velocity.x = direction * SPEED
 	if direction !=0:
 		sprite.flip_h = (direction == -1)
+	
+	# Attacks
+	
 
 	update_animations(direction)
 	move_and_slide()
 	print(velocity)
-	
+
 func update_animations(direction):
 	if is_on_floor():
 		if direction == 0:
