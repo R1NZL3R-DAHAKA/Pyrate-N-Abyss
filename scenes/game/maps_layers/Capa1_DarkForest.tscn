@@ -1,3 +1,9 @@
-[gd_scene format=3 uid="uid://cjk8pybl1d2we"]
+[gd_scene load_steps=2 format=3 uid="uid://cjk8pybl1d2we"]
+
+[sub_resource type="TileSet" id="TileSet_041fm"]
 
 [node name="Capa1DarkForest" type="Node2D"]
+
+[node name="TileMap" type="TileMap" parent="."]
+tile_set = SubResource("TileSet_041fm")
+format = 2
