@@ -7,7 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://o7olbwf72gcu" path="res://Assests/Background/CloudsFront.png" id="5_rt5j8"]
 [ext_resource type="Texture2D" uid="uid://ciye6nd7ykomb" path="res://Assests/Background/sea.png" id="6_spp77"]
 [ext_resource type="Texture2D" uid="uid://dkf0881hwh5y0" path="res://Assests/Background/BGFront.png" id="7_541v7"]
-[ext_resource type="PackedScene" uid="uid://3md6blydppbl" path="res://scenes/game/MC/character_body_2d.tscn" id="8_p7jqd"]
+[ext_resource type="PackedScene" uid="uid://3md6blydppbl" path="res://scenes/game/MC/Player2D.tscn" id="8_vuuxr"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_budhl"]
 texture = ExtResource("1_0qsbx")
@@ -1786,13 +1786,5 @@ position = Vector2(825, 207)
 scale = Vector2(3.30737, 2.46563)
 texture = ExtResource("7_541v7")
 
-[node name="Camera2D" type="Camera2D" parent="."]
-position = Vector2(-46, -17)
-offset = Vector2(50, 200)
-limit_left = 50
-limit_top = 50
-limit_right = 5000
-limit_bottom = 5000
-
-[node name="CharacterBody2D" parent="." instance=ExtResource("8_p7jqd")]
-position = Vector2(74, 605)
+[node name="Player2D" parent="." instance=ExtResource("8_vuuxr")]
+position = Vector2(177, 609)
