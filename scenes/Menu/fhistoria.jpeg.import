@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://chjx2w07hy4mr"
-path="res://.godot/imported/fhistoria.jpeg-16c11ac43fd96c845754d0a34b821bf5.ctex"
+path="res://.godot/imported/fhistoria.jpeg-040391e0076d9bf464af507bf9b933c0.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://scenes/Menu/fhistoria.jpeg"
-dest_files=["res://.godot/imported/fhistoria.jpeg-16c11ac43fd96c845754d0a34b821bf5.ctex"]
+source_file="res://Scenes/Menu/fhistoria.jpeg"
+dest_files=["res://.godot/imported/fhistoria.jpeg-040391e0076d9bf464af507bf9b933c0.ctex"]
 
 [params]
 

@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=3 uid="uid://21vqxc26r5f1"]
+[gd_scene load_steps=14 format=3 uid="uid://21vqxc26r5f1"]
 
 [ext_resource type="Texture2D" uid="uid://b520nndoe5l8v" path="res://Assests/Foreground tilesets/tileset normal1.png" id="1_0qsbx"]
 [ext_resource type="Texture2D" uid="uid://cggvqy6tfndkv" path="res://Assests/Foreground tilesets/Tileset.png" id="2_3jv7u"]
@@ -7,9 +7,8 @@
 [ext_resource type="Texture2D" uid="uid://o7olbwf72gcu" path="res://Assests/Background/CloudsFront.png" id="5_rt5j8"]
 [ext_resource type="Texture2D" uid="uid://ciye6nd7ykomb" path="res://Assests/Background/sea.png" id="6_spp77"]
 [ext_resource type="Texture2D" uid="uid://dkf0881hwh5y0" path="res://Assests/Background/BGFront.png" id="7_541v7"]
-[ext_resource type="PackedScene" uid="uid://dxa8oqufpi7d" path="res://Scenes/game/MC/Player2D.tscn" id="8_vuuxr"]
-[ext_resource type="PackedScene" uid="uid://c1h77axilqtwy" path="res://Scenes/camera/camera_2d.tscn" id="9_xhlgn"]
-[ext_resource type="PackedScene" uid="uid://b5qjvfbte4svk" path="res://objects/pickable_object/pickable_object.tscn" id="10_rgrc6"]
+[ext_resource type="PackedScene" uid="uid://dxa8oqufpi7d" path="res://scenes/game/MC/Player2D.tscn" id="8_vuuxr"]
+[ext_resource type="PackedScene" uid="uid://c1h77axilqtwy" path="res://scenes/camera/camera_2d.tscn" id="9_xhlgn"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_budhl"]
 texture = ExtResource("1_0qsbx")
@@ -1816,6 +1815,3 @@ position = Vector2(158, 473)
 
 [node name="Camera2D2" parent="Player2D" instance=ExtResource("9_xhlgn")]
 position = Vector2(184, -231)
-
-[node name="PickableObject" parent="." instance=ExtResource("10_rgrc6")]
-position = Vector2(438, 399)
