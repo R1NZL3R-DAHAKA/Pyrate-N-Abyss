@@ -10,6 +10,9 @@ func _ready():
 	#AnimationImg.play("do_img")
 	AnimationCamera.play("do_camera")
 
+func _go_title_screen():
+	
+	get_tree().change_scene_to_file("res://scenes/game/maps_layers/Capa0_Island.tscn")
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
@@ -25,4 +28,5 @@ func _on_animation_img_animation_finished(anim_name):
 
 
 func _on_animation_camera_animation_finished(anim_name):
-	pass # Replace with function body.
+	if anim_name == "do_camera":
+		_go_title_screen()

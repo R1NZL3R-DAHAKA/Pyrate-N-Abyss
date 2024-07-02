@@ -1,7 +1,54 @@
-[gd_scene load_steps=9 format=3 uid="uid://bemy3dytsisqq"]
+[gd_scene load_steps=16 format=3 uid="uid://bemy3dytsisqq"]
 
-[ext_resource type="Texture2D" uid="uid://71dj3jt0oqi8" path="res://Scenes/Menu/fondo.jpeg" id="1_0rjab"]
+[ext_resource type="Texture2D" uid="uid://71dj3jt0oqi8" path="res://scenes/Menu/fondo.jpeg" id="1_0rjab"]
 [ext_resource type="Script" path="res://Scenes/Menu/menu.gd" id="1_qf5tl"]
+[ext_resource type="FontFile" uid="uid://5j301158oo42" path="res://Fonts/Kenney Blocks.ttf" id="3_qfne8"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_it6ce"]
+bg_color = Color(0.34902, 0.34902, 0.34902, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_52gjq"]
+bg_color = Color(0.34902, 0.34902, 0.34902, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ktgnc"]
+bg_color = Color(0.34902, 0.34902, 0.34902, 1)
+
+[sub_resource type="Animation" id="Animation_0gtie"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("TextureRect:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_m37v3"]
+resource_name = "do_img"
+length = 3.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("TextureRect:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_j4xmh"]
+_data = {
+"RESET": SubResource("Animation_0gtie"),
+"do_img": SubResource("Animation_m37v3")
+}
 
 [sub_resource type="Animation" id="Animation_redqd"]
 length = 0.001
@@ -60,14 +107,62 @@ _data = {
 "do_animation": SubResource("Animation_gexwb")
 }
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_it6ce"]
-bg_color = Color(0.34902, 0.34902, 0.34902, 1)
+[sub_resource type="Animation" id="Animation_pawce"]
+resource_name = "do_text"
+length = 3.0
+tracks/0/type = "bezier"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("RichTextLabel:position:x")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"handle_modes": PackedInt32Array(0, 0),
+"points": PackedFloat32Array(-738, -0.25, 0, 0.25, 0, 252, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0, 3)
+}
+tracks/1/type = "bezier"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("RichTextLabel:position:y")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"handle_modes": PackedInt32Array(0, 0),
+"points": PackedFloat32Array(62, -0.25, 0, 0.25, 0, 62, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0, 3)
+}
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_52gjq"]
-bg_color = Color(0.34902, 0.34902, 0.34902, 1)
+[sub_resource type="Animation" id="Animation_586g7"]
+length = 0.001
+tracks/0/type = "bezier"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("RichTextLabel:position:x")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(-738, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/1/type = "bezier"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("RichTextLabel:position:y")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(62, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ktgnc"]
-bg_color = Color(0.34902, 0.34902, 0.34902, 1)
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_ax5u5"]
+_data = {
+"RESET": SubResource("Animation_586g7"),
+"do_text": SubResource("Animation_pawce")
+}
 
 [node name="Menu" type="Control"]
 layout_mode = 3
@@ -89,10 +184,20 @@ grow_vertical = 2
 texture = ExtResource("1_0rjab")
 expand_mode = 1
 
-[node name="AnimationButton" type="AnimationPlayer" parent="."]
-libraries = {
-"": SubResource("AnimationLibrary_nu5w6")
-}
+[node name="RichTextLabel" type="RichTextLabel" parent="."]
+layout_mode = 2
+offset_left = -738.0
+offset_top = 62.0
+offset_right = -32.0
+offset_bottom = 163.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/default_color = Color(1, 1, 1, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_fonts/normal_font = ExtResource("3_qfne8")
+theme_override_font_sizes/normal_font_size = 64
+text = "Pyrates’N’Abyss
+"
 
 [node name="VBoxContainer" type="VBoxContainer" parent="."]
 layout_mode = 1
@@ -101,10 +206,10 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -304.0
-offset_top = 223.0
-offset_right = -30.9998
-offset_bottom = 413.0
+offset_left = -880.0
+offset_top = -97.0
+offset_right = -607.0
+offset_bottom = 93.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_constants/separation = 20
@@ -127,7 +232,23 @@ theme_override_font_sizes/font_size = 30
 theme_override_styles/normal = SubResource("StyleBoxFlat_ktgnc")
 text = "SALIR"
 
-[connection signal="animation_finished" from="AnimationButton" to="." method="_on_animation_button_animation_finished"]
+[node name="AnimationImg" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_j4xmh")
+}
+
+[node name="AnimationButton" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_nu5w6")
+}
+
+[node name="AnimationText" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_ax5u5")
+}
+
 [connection signal="pressed" from="VBoxContainer/Play" to="." method="_on_play_pressed"]
 [connection signal="pressed" from="VBoxContainer/Options" to="." method="_on_options_pressed"]
 [connection signal="pressed" from="VBoxContainer/Quit" to="." method="_on_quit_pressed"]
+[connection signal="animation_finished" from="AnimationImg" to="." method="_on_animation_img_animation_finished"]
+[connection signal="animation_finished" from="AnimationButton" to="." method="_on_animation_button_animation_finished"]
