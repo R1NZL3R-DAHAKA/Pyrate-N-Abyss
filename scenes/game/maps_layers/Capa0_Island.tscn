@@ -7,7 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://o7olbwf72gcu" path="res://Assests/Background/CloudsFront.png" id="5_rt5j8"]
 [ext_resource type="Texture2D" uid="uid://ciye6nd7ykomb" path="res://Assests/Background/sea.png" id="6_spp77"]
 [ext_resource type="Texture2D" uid="uid://dkf0881hwh5y0" path="res://Assests/Background/BGFront.png" id="7_541v7"]
-[ext_resource type="PackedScene" uid="uid://3md6blydppbl" path="res://scenes/game/MC/Player2D.tscn" id="8_vuuxr"]
+[ext_resource type="PackedScene" uid="uid://3md6blydppbl" path="res://Scenes/game/MC/Player2D.tscn" id="8_vuuxr"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_budhl"]
 texture = ExtResource("1_0qsbx")

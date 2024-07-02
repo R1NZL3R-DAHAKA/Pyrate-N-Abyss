@@ -1,0 +1,185 @@
+[gd_scene load_steps=10 format=3 uid="uid://6rx03cu34w5q"]
+
+[ext_resource type="Texture2D" uid="uid://chjx2w07hy4mr" path="res://Scenes/Menu/fhistoria.jpeg" id="1_11ubv"]
+[ext_resource type="Script" path="res://Scenes/Menu/game.gd" id="1_i5wgp"]
+[ext_resource type="FontFile" uid="uid://bpqpulx3xc3r4" path="res://Fonts/Kenney Pixel.ttf" id="2_uff32"]
+
+[sub_resource type="Animation" id="Animation_l7op5"]
+length = 0.001
+tracks/0/type = "bezier"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position:x")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(-4, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/1/type = "bezier"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:position:y")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(-8, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+
+[sub_resource type="Animation" id="Animation_w7ypr"]
+resource_name = "do_img"
+length = 3.0
+tracks/0/type = "bezier"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position:x")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"handle_modes": PackedInt32Array(0, 0),
+"points": PackedFloat32Array(-4, -0.25, 0, 0.25, 0, -4, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0, 3)
+}
+tracks/1/type = "bezier"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:position:y")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"handle_modes": PackedInt32Array(0, 0),
+"points": PackedFloat32Array(-8, -0.25, 0, 0.25, 0, -644, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0, 3)
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_vh0cp"]
+_data = {
+"RESET": SubResource("Animation_l7op5"),
+"do_img": SubResource("Animation_w7ypr")
+}
+
+[sub_resource type="Animation" id="Animation_fj0ob"]
+length = 0.001
+tracks/0/type = "bezier"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Camera2D:position:x")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(584, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/1/type = "bezier"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Camera2D:position:y")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(316, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+
+[sub_resource type="Animation" id="Animation_ixf6h"]
+resource_name = "do_camera"
+length = 5.0
+tracks/0/type = "bezier"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Camera2D:position:x")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"handle_modes": PackedInt32Array(0, 0),
+"points": PackedFloat32Array(584, -0.25, 0, 0.25, 0, 584, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0, 5)
+}
+tracks/1/type = "bezier"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Camera2D:position:y")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"handle_modes": PackedInt32Array(0, 0),
+"points": PackedFloat32Array(316, -0.25, 0, 0.25, 0, 900, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0, 5)
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_54jxv"]
+_data = {
+"RESET": SubResource("Animation_fj0ob"),
+"do_camera": SubResource("Animation_ixf6h")
+}
+
+[node name="Game" type="Node2D"]
+script = ExtResource("1_i5wgp")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(584, 316)
+
+[node name="TextureRect" type="TextureRect" parent="."]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -4.0
+offset_top = -8.0
+offset_right = 1165.0
+offset_bottom = 1288.0
+grow_horizontal = 2
+texture = ExtResource("1_11ubv")
+expand_mode = 3
+
+[node name="RichTextLabel" type="RichTextLabel" parent="."]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 108.0
+offset_top = 36.0
+offset_right = 1060.0
+offset_bottom = 1116.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_fonts/normal_font = ExtResource("2_uff32")
+theme_override_font_sizes/normal_font_size = 42
+text = "                                                                          Pyrates’N’Abyss
+
+En una época de corsarios y tesoros ocultos, un valiente pirata conocido como el Capitán Hierro se embarca en una aventura épica. Con su armadura brillante y su espada afilada, el Capitán Hierro llega a una isla misteriosa que se dice está repleta de riquezas inigualables.
+
+Al desembarcar, el Capitán Hierro siente la brisa salada del mar y ve la espesura de la jungla ante él. Decidido a descubrir los secretos de la isla, comienza su travesía. Mientras avanza, encuentra monedas doradas que brillan entre las sombras y escucha los ecos de antiguos guardianes que protegen los tesoros ocultos.
+
+Cada nivel de la isla presenta nuevos desafíos: desde enfrentamientos con criaturas salvajes hasta la navegación por trampas engañosas. Sin embargo, el verdadero reto comienza cuando el Capitán Hierro encuentra la entrada a las profundas cuevas de la isla. En su oscuridad, más monedas y secretos esperan ser desvelados, y el Capitán Hierro debe usar toda su astucia y valentía para avanzar.
+
+¿Será capaz el Capitán Hierro de desentrañar los misterios de la isla y reclamar su tesoro? Solo el tiempo lo dirá.
+
+                                                                    Créditos
+
+Desarrollador l: Carlos Carrasco - 
+Diseño de Personajes: [Nombre del Diseñador]
+Programación: [Nombre del Programador]
+Arte y Gráficos: [Nombre del Artista]
+Música y Efectos de Sonido: [Nombre del Compositor]
+Testeo y QA: [Nombre del Tester]"
+
+[node name="AnimationImg" type="AnimationPlayer" parent="."]
+root_node = NodePath("../TextureRect")
+libraries = {
+"": SubResource("AnimationLibrary_vh0cp")
+}
+
+[node name="AnimationCamera" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_54jxv")
+}
+
+[connection signal="animation_finished" from="AnimationImg" to="." method="_on_animation_img_animation_finished"]
+[connection signal="animation_finished" from="AnimationCamera" to="." method="_on_animation_camera_animation_finished"]
