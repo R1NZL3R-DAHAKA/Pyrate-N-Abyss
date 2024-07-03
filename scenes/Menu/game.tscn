@@ -1,6 +1,6 @@
 [gd_scene load_steps=10 format=3 uid="uid://6rx03cu34w5q"]
 
-[ext_resource type="Texture2D" uid="uid://chjx2w07hy4mr" path="res://scenes/Menu/fhistoria.jpeg" id="1_11ubv"]
+[ext_resource type="Texture2D" uid="uid://chjx2w07hy4mr" path="res://Scenes/Menu/fhistoria.jpeg" id="1_11ubv"]
 [ext_resource type="Script" path="res://Scenes/Menu/game.gd" id="1_i5wgp"]
 [ext_resource type="FontFile" uid="uid://bpqpulx3xc3r4" path="res://Fonts/Kenney Pixel.ttf" id="2_uff32"]
 
