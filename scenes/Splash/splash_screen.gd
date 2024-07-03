@@ -20,7 +20,7 @@ func _input(event):
 
 func _go_title_screen():
 	
-	get_tree().change_scene_to_file("res://Scenes/Menu/menu.tscn")
+	get_tree().change_scene_to_file("res://scenes/Menu/menu.tscn")
 
 func _on_animation_endless_animation_finished(anim_name):
 	# Al terminar la animación de AnimationEndless, comenzamos la de AnimationPlayer1
