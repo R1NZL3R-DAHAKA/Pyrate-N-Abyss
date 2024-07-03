@@ -3,6 +3,8 @@ extends CharacterBody2D
 @onready var ap = $AnimationPlayer
 @onready var sprite = $Sprite2D
 
+@export var attacking = false
+
 const SPEED = 200.0
 const JUMP_VELOCITY = -200
 const DOUBLE_JUMP_VELOCITY = -180  # Velocidad para el doble salto
@@ -13,11 +15,14 @@ var can_jump = true  # Bandera para permitir el salto
 var has_double_jumped = false  # Bandera para rastrear si ya se realizó el doble salto
 var _jump_count = 0 # Contador de saltos realizados
 
+func _process(delta):
+	if Input.is_action_just_pressed("attack"):
+		attack()
+
 func _physics_process(delta):
 	# Add the gravity.
 	if not is_on_floor():
 		velocity.y += gravity * delta
-
 	# Handle jump.
 	if Input.is_action_just_pressed("jump"):
 		if is_on_floor():
@@ -34,22 +39,22 @@ func _physics_process(delta):
 	if direction != 0:
 		sprite.flip_h = (direction == -1)
 
-	# Attacks
-	if Input.is_action_just_pressed("attack") and is_on_floor():
-		ap.play("attack1")
-
 	update_animations(direction)
 	move_and_slide()
 	print(velocity)
+	
+func attack():
+	attacking = true
+	ap.play("attack1")
+	
 
 func update_animations(direction):
-	if is_on_floor():
-		if direction == 0:
-			ap.play("idle")
-		else:
+	if !attacking:
+		if direction != 0:
 			ap.play("run")
-	else:
+		else:
+			ap.play("idle")
 		if velocity.y < 0:
 			ap.play("jump")
 		elif velocity.y > 0:
-			ap.play("fall")
+			ap.play("fall")	
