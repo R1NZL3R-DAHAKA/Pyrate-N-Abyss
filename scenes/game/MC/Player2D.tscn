@@ -339,7 +339,7 @@ _data = {
 }
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_buu0c"]
-size = Vector2(51.5, 39.25)
+size = Vector2(2.75, 39.25)
 
 [node name="Player2D" type="CharacterBody2D"]
 script = ExtResource("1_ttfft")
@@ -359,6 +359,6 @@ texture = ExtResource("2_kqwr0")
 hframes = 10
 
 [node name="CollisionAttack" type="CollisionShape2D" parent="."]
-position = Vector2(31.25, 20.375)
+position = Vector2(10.625, 19)
 shape = SubResource("RectangleShape2D_buu0c")
 debug_color = Color(0.937255, 0, 0, 0.419608)
