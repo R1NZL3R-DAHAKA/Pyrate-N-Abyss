@@ -1,0 +1,42 @@
+[gd_scene load_steps=8 format=3 uid="uid://b4h3drun57cyq"]
+
+[ext_resource type="Texture2D" uid="uid://bmn2hx61jlm7n" path="res://Assests/gold_coin/01.png" id="1_de7tv"]
+[ext_resource type="Script" path="res://objects/area_2d.gd" id="1_ighrc"]
+[ext_resource type="Texture2D" uid="uid://bosp5l4cys2vv" path="res://Assests/gold_coin/02.png" id="2_53fgg"]
+[ext_resource type="Texture2D" uid="uid://l026ummyfo1j" path="res://Assests/gold_coin/03.png" id="3_wg7y0"]
+[ext_resource type="Texture2D" uid="uid://dhjgv3bpubs32" path="res://Assests/gold_coin/04.png" id="4_wu2ve"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_355pm"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_de7tv")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_53fgg")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_wg7y0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_wu2ve")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_1spc7"]
+
+[node name="Area2D" type="Area2D"]
+script = ExtResource("1_ighrc")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_355pm")
+animation = &"idle"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_1spc7")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="animation_finished" from="AnimatedSprite2D" to="." method="_on_animated_sprite_2d_animation_finished"]
