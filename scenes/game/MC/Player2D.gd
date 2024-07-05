@@ -44,6 +44,8 @@ func _physics_process(delta):
 	print(velocity)
 	
 func attack():
+	var overlapping_object = $AttackArea.get_overlapping_areas()
+	
 	attacking = true
 	ap.play("attack1")
 	
