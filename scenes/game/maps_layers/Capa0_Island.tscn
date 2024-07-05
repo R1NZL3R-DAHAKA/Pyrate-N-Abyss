@@ -11,7 +11,7 @@
 [ext_resource type="PackedScene" uid="uid://c1h77axilqtwy" path="res://scenes/camera/camera_2d.tscn" id="9_xhlgn"]
 [ext_resource type="PackedScene" uid="uid://b4h3drun57cyq" path="res://objects/area_2d.tscn" id="10_ek47v"]
 [ext_resource type="PackedScene" uid="uid://dh4gte1b3k8ld" path="res://scenes/game/maps_layers/portal.tscn" id="11_t0saf"]
-[ext_resource type="PackedScene" uid="uid://dxmigsfuho136" path="res://scenes/game/MC/insecto.tscn" id="12_t671n"]
+[ext_resource type="PackedScene" uid="uid://b6cvdbxhv4iau" path="res://scenes/game/MC/monster.tscn" id="12_71w5k"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_budhl"]
 texture = ExtResource("1_0qsbx")
@@ -1889,6 +1889,5 @@ position = Vector2(1033, 324)
 [node name="Coin10" parent="Coin21" instance=ExtResource("10_ek47v")]
 position = Vector2(1127, 390)
 
-[node name="Insecto" parent="." instance=ExtResource("12_t671n")]
-position = Vector2(336, 486)
-scale = Vector2(0.7, 0.7)
+[node name="Monster" parent="." instance=ExtResource("12_71w5k")]
+position = Vector2(363, 488)

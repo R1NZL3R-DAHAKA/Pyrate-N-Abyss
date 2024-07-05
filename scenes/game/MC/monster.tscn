@@ -1,7 +1,21 @@
-[gd_scene load_steps=10 format=3 uid="uid://b6cvdbxhv4iau"]
+[gd_scene load_steps=15 format=3 uid="uid://b6cvdbxhv4iau"]
 
 [ext_resource type="Script" path="res://scenes/game/MC/Monster.gd" id="1_sxh6c"]
 [ext_resource type="Texture2D" uid="uid://dl3wvljwg2wa8" path="res://Assests/Enemies/Monster/Sprite-0002.png" id="2_7qq5i"]
+[ext_resource type="PackedScene" uid="uid://b0t6w5umj0f8n" path="res://scenes/UI/healthbar.tscn" id="2_pm0d6"]
+[ext_resource type="Texture2D" uid="uid://cyidi26sxvjw5" path="res://Assests/Enemies/Monster/Monstruo - hit.png" id="3_j4cmu"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pv5cw"]
+atlas = ExtResource("3_j4cmu")
+region = Rect2(0, 0, 40, 40)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_roqf0"]
+atlas = ExtResource("3_j4cmu")
+region = Rect2(40, 0, 40, 40)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_j46ws"]
+atlas = ExtResource("3_j4cmu")
+region = Rect2(80, 0, 40, 40)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_1bbi2"]
 atlas = ExtResource("2_7qq5i")
@@ -25,6 +39,20 @@ region = Rect2(160, 0, 40, 40)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_rgwud"]
 animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_pv5cw")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_roqf0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_j46ws")
+}],
+"loop": true,
+"name": &"Hit",
+"speed": 8.0
+}, {
 "frames": [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_1bbi2")
@@ -53,11 +81,16 @@ height = 42.047
 [node name="Monster" type="CharacterBody2D" groups=["Enemies"]]
 script = ExtResource("1_sxh6c")
 
+[node name="Healthbar" parent="." instance=ExtResource("2_pm0d6")]
+offset_left = -30.0
+offset_top = -65.0
+offset_right = -30.0
+offset_bottom = -65.0
+
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_rgwud")
-animation = &"Run"
-frame = 3
-frame_progress = 0.637495
+animation = &"Hit"
+frame_progress = 0.8711
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(1.19209e-07, -1)

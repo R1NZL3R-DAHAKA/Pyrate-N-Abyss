@@ -353,7 +353,7 @@ _data = {
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_dhfyu"]
 size = Vector2(51, 42)
 
-[node name="Player2D" type="CharacterBody2D"]
+[node name="Player2D" type="CharacterBody2D" groups=["Player"]]
 script = ExtResource("1_ttfft")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]

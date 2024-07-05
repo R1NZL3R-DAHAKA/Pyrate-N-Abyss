@@ -15,8 +15,10 @@ var can_jump = true  # Bandera para permitir el salto
 var has_double_jumped = false  # Bandera para rastrear si ya se realizó el doble salto
 var _jump_count = 0 # Contador de saltos realizados
 
+@export var hit =  false
+
 func _process(delta):
-	if Input.is_action_just_pressed("attack"):
+	if Input.is_action_just_pressed("attack") && !hit:
 		attack()
 
 func _physics_process(delta):
@@ -58,7 +60,7 @@ func attack():
 	
 
 func update_animations(direction):
-	if !attacking:
+	if !attacking && !hit:
 		if direction != 0:
 			ap.play("run")
 		else:

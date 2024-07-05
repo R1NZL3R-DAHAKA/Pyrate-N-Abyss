@@ -1,15 +1,17 @@
 extends CharacterBody2D
 
-var speed = -60.0
-var current_speed = 0.0
+@export var speed = -60.0
 
 var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
+
 var facing_right = false
 var dead = false
+
 var max_health = 5
 var health
 
 func _ready():
+	health = max_health
 	$AnimatedSprite2D.play("Run") 
 	
 func _process(delta):
@@ -35,8 +37,17 @@ func flip():
 		speed = abs(speed) * -1
 
 func _on_area_2d_area_entered(area):
-	if area.get_parent("Player2D"):
-		area.get_parent().die()
+	if area.get_parent("Player2D") && !dead:
+		area.get_parent().take_damage(1)
+
+func take_damage(damage_amount):
+	health -= damage_amount
+	
+	get_node("Healthbar").update_healthbar(health, max_health)
+	$AnimatedSprite2D.play("Hit")
+	
+	if health <= 0:
+		die()
 
 func die():
 	dead = true
