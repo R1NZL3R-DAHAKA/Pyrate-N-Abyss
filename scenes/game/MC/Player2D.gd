@@ -46,6 +46,10 @@ func _physics_process(delta):
 func attack():
 	var overlapping_object = $AttackArea.get_overlapping_areas()
 	
+	for area in overlapping_object:
+		var parent = area.get_parent()
+		print(parent.name)
+	
 	attacking = true
 	ap.play("attack1")
 	
