@@ -1,0 +1,92 @@
+[gd_scene load_steps=13 format=3 uid="uid://dxmigsfuho136"]
+
+[ext_resource type="Script" path="res://scenes/game/MC/Insecto.gd" id="1_hl36u"]
+[ext_resource type="Texture2D" uid="uid://doi8dh2wjcihq" path="res://Assests/Enemies/Insecto/Sprite-0003-sheet.png" id="2_0gh33"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_h37rp"]
+atlas = ExtResource("2_0gh33")
+region = Rect2(2, 0, 56, 44)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ui6o4"]
+atlas = ExtResource("2_0gh33")
+region = Rect2(58, 0, 56, 44)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_g3bg3"]
+atlas = ExtResource("2_0gh33")
+region = Rect2(114, 0, 56, 44)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_63773"]
+atlas = ExtResource("2_0gh33")
+region = Rect2(170, 0, 56, 44)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mva4w"]
+atlas = ExtResource("2_0gh33")
+region = Rect2(226, 0, 56, 44)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gwct0"]
+atlas = ExtResource("2_0gh33")
+region = Rect2(282, 0, 56, 44)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_snvph"]
+atlas = ExtResource("2_0gh33")
+region = Rect2(338, 0, 56, 44)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_a7tcu"]
+atlas = ExtResource("2_0gh33")
+region = Rect2(394, 0, 56, 44)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_i24oo"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_h37rp")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ui6o4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_g3bg3")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_63773")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mva4w")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gwct0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_snvph")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_a7tcu")
+}],
+"loop": true,
+"name": &"Fly",
+"speed": 10.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_rda4c"]
+size = Vector2(35.5, 32)
+
+[node name="Insecto" type="CharacterBody2D"]
+script = ExtResource("1_hl36u")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_i24oo")
+animation = &"Fly"
+frame_progress = 0.688354
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-4.75, 2)
+shape = SubResource("RectangleShape2D_rda4c")
+
+[node name="Node2D" type="Node2D" parent="."]
+visible = false
+
+[node name="Derecha" type="RayCast2D" parent="Node2D"]
+target_position = Vector2(60, 0)
+
+[node name="Izquierda" type="RayCast2D" parent="Node2D"]
+target_position = Vector2(-60, 0)

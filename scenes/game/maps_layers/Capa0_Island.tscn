@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=3 uid="uid://bo3dvdo8tfxr2"]
+[gd_scene load_steps=17 format=3 uid="uid://bo3dvdo8tfxr2"]
 
 [ext_resource type="Texture2D" uid="uid://b520nndoe5l8v" path="res://Assests/Foreground tilesets/tileset normal1.png" id="1_0qsbx"]
 [ext_resource type="Texture2D" uid="uid://cggvqy6tfndkv" path="res://Assests/Foreground tilesets/Tileset.png" id="2_3jv7u"]
@@ -11,6 +11,7 @@
 [ext_resource type="PackedScene" uid="uid://c1h77axilqtwy" path="res://scenes/camera/camera_2d.tscn" id="9_xhlgn"]
 [ext_resource type="PackedScene" uid="uid://b4h3drun57cyq" path="res://objects/area_2d.tscn" id="10_ek47v"]
 [ext_resource type="PackedScene" uid="uid://dh4gte1b3k8ld" path="res://scenes/game/maps_layers/portal.tscn" id="11_t0saf"]
+[ext_resource type="PackedScene" uid="uid://duvx63ywk0jty" path="res://scenes/game/MC/Anfibio.tscn" id="12_hpe0l"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_budhl"]
 texture = ExtResource("1_0qsbx")
@@ -1887,3 +1888,6 @@ position = Vector2(1033, 324)
 
 [node name="Coin10" parent="Coin21" instance=ExtResource("10_ek47v")]
 position = Vector2(1127, 390)
+
+[node name="Anfibio" parent="." instance=ExtResource("12_hpe0l")]
+position = Vector2(297, 492)

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://chjx2w07hy4mr"
-path="res://.godot/imported/fhistoria.jpeg-040391e0076d9bf464af507bf9b933c0.ctex"
+uid="uid://cq71wdkxqw2k5"
+path="res://.godot/imported/Sprite-0001.png-90922616087e8d4d282b4ec5c3e73781.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Scenes/Menu/fhistoria.jpeg"
-dest_files=["res://.godot/imported/fhistoria.jpeg-040391e0076d9bf464af507bf9b933c0.ctex"]
+source_file="res://Assests/Enemies/Anfibio/Sprite-0001.png"
+dest_files=["res://.godot/imported/Sprite-0001.png-90922616087e8d4d282b4ec5c3e73781.ctex"]
 
 [params]
 
