@@ -5,7 +5,7 @@ var current_speed = 0.0
 
 var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 var facing_right = false
-var dead = falsevar max_health = 2var max_health = 2
+var dead = false
 var max_health = 5
 var health
 
@@ -17,6 +17,9 @@ func _process(delta):
 		velocity.y += gravity * delta
 		
 	if !$Node2D/RayCast2D.is_colliding() && is_on_floor():
+		flip()
+		
+	if is_on_wall():
 		flip()
 		
 	velocity.x = -speed

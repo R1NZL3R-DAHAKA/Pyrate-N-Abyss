@@ -19,6 +19,9 @@ func _process(delta):
 	if !$Node2D/RayCast2D.is_colliding() && is_on_floor():
 		flip()
 		
+	if is_on_wall():
+		flip()
+		
 	velocity.x = -speed
 	move_and_slide()
 	
@@ -30,7 +33,6 @@ func flip():
 		speed = abs(speed)
 	else:
 		speed = abs(speed) * -1
-
 
 func _on_area_2d_area_entered(area):
 	if area.get_parent("Player2D"):
