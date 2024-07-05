@@ -67,10 +67,11 @@ animations = [{
 "speed": 10.0
 }]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_rda4c"]
-size = Vector2(35.5, 32)
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_tapgy"]
+radius = 15.0119
+height = 44.0226
 
-[node name="Insecto" type="CharacterBody2D"]
+[node name="Insecto" type="CharacterBody2D" groups=["Enemies"]]
 script = ExtResource("1_hl36u")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
@@ -79,11 +80,19 @@ animation = &"Fly"
 frame_progress = 0.688354
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(-4.75, 2)
-shape = SubResource("RectangleShape2D_rda4c")
+position = Vector2(-5, 1)
+rotation = -1.584
+shape = SubResource("CapsuleShape2D_tapgy")
 
 [node name="Node2D" type="Node2D" parent="."]
 
 [node name="RayCast2D" type="RayCast2D" parent="Node2D"]
 position = Vector2(-24, 0)
 target_position = Vector2(0, 100)
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(-5, 1)
+rotation = -1.584
+shape = SubResource("CapsuleShape2D_tapgy")

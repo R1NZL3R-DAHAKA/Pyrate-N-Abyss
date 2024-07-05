@@ -49,6 +49,9 @@ func attack():
 	for area in overlapping_object:
 		var parent = area.get_parent()
 		print(parent.name)
+		
+		if area.get_parent().is_in_group("Enemies"):
+			area.get_parent().die()
 	
 	attacking = true
 	ap.play("attack1")

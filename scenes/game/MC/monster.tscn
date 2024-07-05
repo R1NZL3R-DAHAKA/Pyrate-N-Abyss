@@ -50,7 +50,7 @@ animations = [{
 radius = 18.0262
 height = 42.047
 
-[node name="Monster" type="CharacterBody2D"]
+[node name="Monster" type="CharacterBody2D" groups=["Enemies"]]
 script = ExtResource("1_sxh6c")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
@@ -68,7 +68,7 @@ shape = SubResource("CapsuleShape2D_mfami")
 
 [node name="RayCast2D" type="RayCast2D" parent="Node2D"]
 position = Vector2(15, 1)
-target_position = Vector2(0, 15)
+target_position = Vector2(0, 18)
 
 [node name="Hitbox" type="Area2D" parent="."]
 

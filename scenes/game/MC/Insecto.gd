@@ -3,7 +3,7 @@ extends CharacterBody2D
 var speed = -60.0
 var current_speed = 0.0
 
-var gravity = 0
+var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 var facing_right = false
 var dead = false
 var max_health = 1
@@ -34,4 +34,6 @@ func _on_area_2d_area_entered(area):
 		area.get_parent().die()
 
 func die():
+	dead = true
+	speed = 0
 	queue_free()

@@ -43,7 +43,7 @@ animations = [{
 radius = 14.4321
 height = 38.0128
 
-[node name="Anfibio" type="CharacterBody2D"]
+[node name="Anfibio" type="CharacterBody2D" groups=["Enemies"]]
 script = ExtResource("1_oj1au")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]

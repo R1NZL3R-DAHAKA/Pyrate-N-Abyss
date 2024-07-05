@@ -35,8 +35,10 @@ func flip():
 		speed = abs(speed) * -1
 
 func _on_area_2d_area_entered(area):
-	if area.get_parent("Player2D"):
+	if area.get_parent("Player2D") && !dead:
 		area.get_parent().die()
 
 func die():
+	dead = true
+	speed = 0
 	queue_free()

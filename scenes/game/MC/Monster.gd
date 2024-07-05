@@ -39,4 +39,6 @@ func _on_area_2d_area_entered(area):
 		area.get_parent().die()
 
 func die():
+	dead = true
+	speed = 0
 	queue_free()
