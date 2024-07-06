@@ -1,11 +1,14 @@
 extends CharacterBody2D
+class_name Player2D
 
 @onready var ap = $AnimationPlayer
 @onready var sprite = $Sprite2D
 
 @export var attacking = false
+@export var speed = 200.0
+@export var hit =  false
+@export var is_dead = false
 
-const SPEED = 200.0
 const JUMP_VELOCITY = -200
 const DOUBLE_JUMP_VELOCITY = -180  # Velocidad para el doble salto
 
@@ -15,7 +18,7 @@ var can_jump = true  # Bandera para permitir el salto
 var has_double_jumped = false  # Bandera para rastrear si ya se realizó el doble salto
 var _jump_count = 0 # Contador de saltos realizados
 
-@export var hit =  false
+
 
 func _process(delta):
 	if Input.is_action_just_pressed("attack") && !hit:
@@ -34,10 +37,14 @@ func _physics_process(delta):
 		elif !has_double_jumped:
 			velocity.y = DOUBLE_JUMP_VELOCITY  # Doble salto si ya está en el aire y no se ha realizado antes
 			_jump_count += 1
-
+	
+	if Input.is_action_just_pressed("move_right"):
+		$AttackArea/CollisionShape2D.position.x = 29
+	if Input.is_action_just_pressed("move_left"):
+		$AttackArea/CollisionShape2D.position.x = -29
 	# Get the input direction and handle the movement/deceleration.
 	var direction = Input.get_axis("move_left", "move_right")
-	velocity.x = direction * SPEED
+	velocity.x = direction * speed
 	if direction != 0:
 		sprite.flip_h = (direction == -1)
 
@@ -69,3 +76,9 @@ func update_animations(direction):
 			ap.play("jump")
 		elif velocity.y > 0:
 			ap.play("fall")	
+			
+func die():
+	is_dead = true
+	speed = 0
+	queue_free()
+	print("die")

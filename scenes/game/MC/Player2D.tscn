@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=3 uid="uid://dxa8oqufpi7d"]
+[gd_scene load_steps=17 format=3 uid="uid://dxa8oqufpi7d"]
 
 [ext_resource type="Script" path="res://scenes/game/MC/Player2D.gd" id="1_ttfft"]
 [ext_resource type="Texture2D" uid="uid://cbnbhx7tnlijh" path="res://Assests/Colour1 Knight/Outline/120x80_PNGSheets/_Run.png" id="2_kqwr0"]
@@ -7,8 +7,14 @@
 [ext_resource type="Texture2D" uid="uid://lgdoy48se53u" path="res://Assests/Colour1 Knight/Outline/120x80_PNGSheets/_Idle.png" id="5_fo3um"]
 [ext_resource type="Texture2D" uid="uid://b3q7t0n4nl11h" path="res://Assests/Colour1 Knight/Outline/120x80_PNGSheets/_Attack.png" id="6_wwwqm"]
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_2nddt"]
+size = Vector2(14, 38)
+
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_naooy"]
 size = Vector2(10, 35.5)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_dhfyu"]
+size = Vector2(58, 42)
 
 [sub_resource type="Animation" id="Animation_qo1lr"]
 length = 0.001
@@ -350,20 +356,20 @@ _data = {
 "run": SubResource("Animation_rs4n0")
 }
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_dhfyu"]
-size = Vector2(51, 42)
-
 [node name="Player2D" type="CharacterBody2D" groups=["Player"]]
+collision_layer = 2
 script = ExtResource("1_ttfft")
+
+[node name="Area2D" type="Area2D" parent="."]
+monitoring = false
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(0, 22)
+shape = SubResource("RectangleShape2D_2nddt")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, 22)
 shape = SubResource("RectangleShape2D_naooy")
-
-[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
-libraries = {
-"": SubResource("AnimationLibrary_0f0go")
-}
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture = ExtResource("2_kqwr0")
@@ -373,6 +379,11 @@ hframes = 10
 monitorable = false
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="AttackArea"]
-position = Vector2(32.5, 19)
+position = Vector2(29, 19)
 shape = SubResource("RectangleShape2D_dhfyu")
 debug_color = Color(0.964706, 0, 0, 0.419608)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_0f0go")
+}
