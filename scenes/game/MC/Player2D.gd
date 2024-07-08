@@ -18,7 +18,13 @@ var can_jump = true  # Bandera para permitir el salto
 var has_double_jumped = false  # Bandera para rastrear si ya se realizó el doble salto
 var _jump_count = 0 # Contador de saltos realizados
 
+var max_health = 2
+var health = 0
+var can_take_damage = true
 
+func _ready():
+	health = max_health
+	#GameManager.player = self
 
 func _process(delta):
 	if Input.is_action_just_pressed("attack") && !hit:
@@ -52,6 +58,9 @@ func _physics_process(delta):
 	move_and_slide()
 	print(velocity)
 	
+	if position.y >= 700:
+		die()
+	
 func attack():
 	var overlapping_object = $AttackArea.get_overlapping_areas()
 	
@@ -60,12 +69,11 @@ func attack():
 		print(parent.name)
 		
 		if area.get_parent().is_in_group("Enemies"):
-			area.get_parent().die()
+			area.get_parent().take_damage(1)
 	
 	attacking = true
 	ap.play("attack1")
 	
-
 func update_animations(direction):
 	if !attacking && !hit:
 		if direction != 0:
@@ -76,9 +84,26 @@ func update_animations(direction):
 			ap.play("jump")
 		elif velocity.y > 0:
 			ap.play("fall")	
-			
+
+func take_damage(damage_amount : int):
+	if can_take_damage:
+		iframes()
+		hit = true
+		attacking = false
+		
+		health = damage_amount
+		
+		if health <= 0:
+			die()
+
+func iframes():
+	can_take_damage = false
+	await get_tree().create_timer(1).timeout
+	can_take_damage = true
+
 func die():
 	is_dead = true
 	speed = 0
 	queue_free()
 	print("die")
+	#GameManager.respawn_player()

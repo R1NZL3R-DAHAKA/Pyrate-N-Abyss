@@ -1,7 +1,21 @@
-[gd_scene load_steps=9 format=3 uid="uid://duvx63ywk0jty"]
+[gd_scene load_steps=15 format=3 uid="uid://duvx63ywk0jty"]
 
 [ext_resource type="Script" path="res://scenes/game/MC/Anfibio.gd" id="1_oj1au"]
+[ext_resource type="PackedScene" uid="uid://b0t6w5umj0f8n" path="res://scenes/UI/healthbar.tscn" id="2_0ve7f"]
 [ext_resource type="Texture2D" uid="uid://cq71wdkxqw2k5" path="res://Assests/Enemies/Anfibio/Sprite-0001.png" id="2_px258"]
+[ext_resource type="Texture2D" uid="uid://cyj2ljqeqcg72" path="res://Assests/Enemies/Anfibio/Anfibio - Hit.png" id="3_r3ore"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bscw8"]
+atlas = ExtResource("3_r3ore")
+region = Rect2(0, 2, 40, 38)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5lnh2"]
+atlas = ExtResource("3_r3ore")
+region = Rect2(40, 2, 40, 38)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qs3cw"]
+atlas = ExtResource("3_r3ore")
+region = Rect2(80, 2, 40, 38)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_nmbx3"]
 atlas = ExtResource("2_px258")
@@ -23,6 +37,20 @@ region = Rect2(120, 3, 40, 33)
 animations = [{
 "frames": [{
 "duration": 1.0,
+"texture": SubResource("AtlasTexture_bscw8")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5lnh2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qs3cw")
+}],
+"loop": true,
+"name": &"Hit",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
 "texture": SubResource("AtlasTexture_nmbx3")
 }, {
 "duration": 1.0,
@@ -40,15 +68,25 @@ animations = [{
 }]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_ok173"]
-radius = 14.4321
+radius = 13.9989
 height = 38.0128
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_dmxn3"]
+radius = 11.9998
+height = 33.9963
 
 [node name="Anfibio" type="CharacterBody2D" groups=["Enemies"]]
 script = ExtResource("1_oj1au")
 
+[node name="Healthbar" parent="." instance=ExtResource("2_0ve7f")]
+offset_left = -30.0
+offset_top = -65.0
+offset_right = -30.0
+offset_bottom = -65.0
+
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_dangk")
-animation = &"Run"
+animation = &"Hit"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 rotation = 1.58317
@@ -63,7 +101,7 @@ target_position = Vector2(0, 15)
 [node name="Area2D" type="Area2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
-rotation = 1.58317
-shape = SubResource("CapsuleShape2D_ok173")
+rotation = 1.57647
+shape = SubResource("CapsuleShape2D_dmxn3")
 
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
