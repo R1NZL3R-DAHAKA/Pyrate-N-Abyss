@@ -1,6 +1,6 @@
 [gd_scene load_steps=16 format=3 uid="uid://b6cvdbxhv4iau"]
 
-[ext_resource type="Script" path="res://scenes/game/MC/Monster.gd" id="1_sxh6c"]
+[ext_resource type="Script" path="res://scenes/game/Enemies/Monster.gd" id="1_sxh6c"]
 [ext_resource type="Texture2D" uid="uid://dl3wvljwg2wa8" path="res://Assests/Enemies/Monster/Sprite-0002.png" id="2_7qq5i"]
 [ext_resource type="PackedScene" uid="uid://b0t6w5umj0f8n" path="res://scenes/UI/healthbar.tscn" id="2_pm0d6"]
 [ext_resource type="Texture2D" uid="uid://cyidi26sxvjw5" path="res://Assests/Enemies/Monster/Monstruo - hit.png" id="3_j4cmu"]

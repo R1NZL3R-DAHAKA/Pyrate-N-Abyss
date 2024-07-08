@@ -1,6 +1,6 @@
 [gd_scene load_steps=19 format=3 uid="uid://dxmigsfuho136"]
 
-[ext_resource type="Script" path="res://scenes/game/MC/Insecto.gd" id="1_hl36u"]
+[ext_resource type="Script" path="res://scenes/game/Enemies/Insecto.gd" id="1_hl36u"]
 [ext_resource type="Texture2D" uid="uid://doi8dh2wjcihq" path="res://Assests/Enemies/Insecto/Sprite-0003-sheet.png" id="2_0gh33"]
 [ext_resource type="PackedScene" uid="uid://b0t6w5umj0f8n" path="res://scenes/UI/healthbar.tscn" id="2_wspf8"]
 [ext_resource type="Texture2D" uid="uid://cut46enrhkxr" path="res://Assests/Enemies/Insecto/Bicho-Hit.png" id="4_mca6d"]

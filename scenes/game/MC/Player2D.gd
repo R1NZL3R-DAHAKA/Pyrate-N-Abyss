@@ -56,10 +56,6 @@ func _physics_process(delta):
 
 	update_animations(direction)
 	move_and_slide()
-	print(velocity)
-	
-	if position.y >= 700:
-		die()
 	
 func attack():
 	var overlapping_object = $AttackArea.get_overlapping_areas()
@@ -85,25 +81,3 @@ func update_animations(direction):
 		elif velocity.y > 0:
 			ap.play("fall")	
 
-func take_damage(damage_amount : int):
-	if can_take_damage:
-		iframes()
-		hit = true
-		attacking = false
-		
-		health = damage_amount
-		
-		if health <= 0:
-			die()
-
-func iframes():
-	can_take_damage = false
-	await get_tree().create_timer(1).timeout
-	can_take_damage = true
-
-func die():
-	is_dead = true
-	speed = 0
-	queue_free()
-	print("die")
-	#GameManager.respawn_player()

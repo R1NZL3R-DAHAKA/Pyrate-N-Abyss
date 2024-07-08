@@ -162,14 +162,11 @@ Cada nivel de la isla presenta nuevos desafíos: desde enfrentamientos con criat
 
 ¿Será capaz el Capitán Hierro de desentrañar los misterios de la isla y reclamar su tesoro? Solo el tiempo lo dirá.
 
-                                                                    Créditos
+                                                                    			Créditos
 
-Desarrollador l: Carlos Carrasco - 
-Diseño de Personajes: [Nombre del Diseñador]
-Programación: [Nombre del Programador]
-Arte y Gráficos: [Nombre del Artista]
-Música y Efectos de Sonido: [Nombre del Compositor]
-Testeo y QA: [Nombre del Tester]"
+																	Carlos Carrasco
+															Daniel Cutimbo [S a mm a e L]
+"
 
 [node name="AnimationImg" type="AnimationPlayer" parent="."]
 root_node = NodePath("../TextureRect")

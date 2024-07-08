@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=3 uid="uid://dxa8oqufpi7d"]
+[gd_scene load_steps=16 format=3 uid="uid://dxa8oqufpi7d"]
 
 [ext_resource type="Script" path="res://scenes/game/MC/Player2D.gd" id="1_ttfft"]
 [ext_resource type="Texture2D" uid="uid://cbnbhx7tnlijh" path="res://Assests/Colour1 Knight/Outline/120x80_PNGSheets/_Run.png" id="2_kqwr0"]
@@ -6,9 +6,6 @@
 [ext_resource type="Texture2D" uid="uid://c8defmny7q2qn" path="res://Assests/Colour1 Knight/Outline/120x80_PNGSheets/_Fall.png" id="4_x6bcs"]
 [ext_resource type="Texture2D" uid="uid://lgdoy48se53u" path="res://Assests/Colour1 Knight/Outline/120x80_PNGSheets/_Idle.png" id="5_fo3um"]
 [ext_resource type="Texture2D" uid="uid://b3q7t0n4nl11h" path="res://Assests/Colour1 Knight/Outline/120x80_PNGSheets/_Attack.png" id="6_wwwqm"]
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_2nddt"]
-size = Vector2(14, 38)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_naooy"]
 size = Vector2(10, 35.5)
@@ -357,15 +354,7 @@ _data = {
 }
 
 [node name="Player2D" type="CharacterBody2D" groups=["Player"]]
-collision_layer = 2
 script = ExtResource("1_ttfft")
-
-[node name="Area2D" type="Area2D" parent="."]
-monitoring = false
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
-position = Vector2(0, 22)
-shape = SubResource("RectangleShape2D_2nddt")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, 22)

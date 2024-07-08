@@ -1,6 +1,6 @@
 [gd_scene load_steps=15 format=3 uid="uid://duvx63ywk0jty"]
 
-[ext_resource type="Script" path="res://scenes/game/MC/Anfibio.gd" id="1_oj1au"]
+[ext_resource type="Script" path="res://scenes/game/Enemies/Anfibio.gd" id="1_oj1au"]
 [ext_resource type="PackedScene" uid="uid://b0t6w5umj0f8n" path="res://scenes/UI/healthbar.tscn" id="2_0ve7f"]
 [ext_resource type="Texture2D" uid="uid://cq71wdkxqw2k5" path="res://Assests/Enemies/Anfibio/Sprite-0001.png" id="2_px258"]
 [ext_resource type="Texture2D" uid="uid://cyj2ljqeqcg72" path="res://Assests/Enemies/Anfibio/Anfibio - Hit.png" id="3_r3ore"]
