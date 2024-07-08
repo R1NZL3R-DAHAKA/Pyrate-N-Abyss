@@ -1829,7 +1829,7 @@ editor_draw_limits = true
 
 [node name="Portal" parent="." instance=ExtResource("11_t0saf")]
 position = Vector2(859, 739)
-escena = "res://scenes/game/maps_layers/Capa1_DarkForest.tscn"
+escena = "res://scenes/game/maps_layers/Capa1_RockyCaves.tscn"
 
 [node name="Coin21" type="Node2D" parent="."]
 

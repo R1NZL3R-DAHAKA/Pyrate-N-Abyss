@@ -1,13 +1,14 @@
-[gd_scene load_steps=15 format=3 uid="uid://bidoj5ypnr0wu"]
+[gd_scene load_steps=16 format=3 uid="uid://bidoj5ypnr0wu"]
 
-[ext_resource type="Texture2D" uid="uid://bkiiy1wi106q0" path="res://Assests/PixelFantasy_Caves_1.0/mainlev_build.png" id="1_lanym"]
-[ext_resource type="Texture2D" uid="uid://bk8i1rgie8ll5" path="res://Assests/PixelFantasy_Caves_1.0/props1.png" id="2_7c54c"]
-[ext_resource type="Texture2D" uid="uid://dtkamvjvu5pwp" path="res://Assests/PixelFantasy_Caves_1.0/props2.png" id="3_t2uld"]
-[ext_resource type="Texture2D" uid="uid://bafarjl3rkv5s" path="res://Assests/PixelFantasy_Caves_1.0/background1.png" id="4_5rcqh"]
-[ext_resource type="Texture2D" uid="uid://cofawilubafyw" path="res://Assests/PixelFantasy_Caves_1.0/background2.png" id="5_n5ac2"]
-[ext_resource type="Texture2D" uid="uid://bwl07ljqyjdou" path="res://Assests/PixelFantasy_Caves_1.0/background3.png" id="6_sf7d7"]
-[ext_resource type="Texture2D" uid="uid://wvb0k6oekh86" path="res://Assests/PixelFantasy_Caves_1.0/background4b.png" id="7_puarb"]
-[ext_resource type="PackedScene" uid="uid://dxa8oqufpi7d" path="res://scenes/game/MC/Player2D.tscn" id="8_7jstp"]
+[ext_resource type="Texture2D" uid="uid://bkiiy1wi106q0" path="res://Assests/PixelFantasy_Caves_1.0/mainlev_build.png" id="1_nv8yw"]
+[ext_resource type="Texture2D" uid="uid://bk8i1rgie8ll5" path="res://Assests/PixelFantasy_Caves_1.0/props1.png" id="2_l0t6k"]
+[ext_resource type="Texture2D" uid="uid://dtkamvjvu5pwp" path="res://Assests/PixelFantasy_Caves_1.0/props2.png" id="3_wwsty"]
+[ext_resource type="Texture2D" uid="uid://bafarjl3rkv5s" path="res://Assests/PixelFantasy_Caves_1.0/background1.png" id="4_1wu6q"]
+[ext_resource type="Texture2D" uid="uid://cofawilubafyw" path="res://Assests/PixelFantasy_Caves_1.0/background2.png" id="5_nqcf4"]
+[ext_resource type="Texture2D" uid="uid://bwl07ljqyjdou" path="res://Assests/PixelFantasy_Caves_1.0/background3.png" id="6_3x2fh"]
+[ext_resource type="Texture2D" uid="uid://wvb0k6oekh86" path="res://Assests/PixelFantasy_Caves_1.0/background4b.png" id="7_akevi"]
+[ext_resource type="PackedScene" uid="uid://dxa8oqufpi7d" path="res://scenes/game/MC/Player2D.tscn" id="8_5lsdj"]
+[ext_resource type="PackedScene" uid="uid://dh4gte1b3k8ld" path="res://scenes/game/maps_layers/portal.tscn" id="9_yu3vk"]
 
 [sub_resource type="TileMapPattern" id="TileMapPattern_oj0fj"]
 tile_data = PackedInt32Array(0, 1376256, 23, 65536, 1376256, 24, 1, 1441792, 23, 65537, 1441792, 24, 2, 1572864, 23, 65538, 1572864, 24, 3, 1638400, 23, 65539, 1638400, 24, 4, 1769472, 23, 65540, 1769472, 24, 5, 1835008, 23, 65541, 1835008, 24, 6, 1245184, 23, 65542, 1245184, 24, 7, 1114112, 23, 65543, 1114112, 24, 8, 917504, 23, 65544, 917504, 24, 9, 983040, 23, 65545, 983040, 24, 10, 1376256, 23, 65546, 1376256, 24, 11, 1441792, 23, 65547, 1441792, 24, 12, 1114112, 23, 65548, 1114112, 24, 13, 1572864, 23, 65549, 1572864, 24, 14, 1638400, 23, 65550, 1638400, 24, 15, 1769472, 23, 65551, 1769472, 24, 16, 1835008, 23, 65552, 1835008, 24, 17, 917504, 23, 65553, 917504, 24, 18, 1114112, 23, 65554, 1114112, 24, 19, 1376256, 23, 65555, 1376256, 24, 20, 917504, 23, 65556, 917504, 24, 21, 983040, 23, 65557, 983040, 24)
@@ -16,7 +17,7 @@ tile_data = PackedInt32Array(0, 1376256, 23, 65536, 1376256, 24, 1, 1441792, 23,
 tile_data = PackedInt32Array(0, 2162688, 15, 1, 2228224, 15, 2, 2359296, 15, 3, 393216, 15, 4, 393216, 15, 5, 2359296, 15, 6, 524288, 15, 7, 589824, 15)
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_fhuwp"]
-texture = ExtResource("1_lanym")
+texture = ExtResource("1_nv8yw")
 6:1/0 = 0
 6:1/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 6:1/0/physics_layer_0/angular_velocity = 0.0
@@ -2932,7 +2933,7 @@ texture = ExtResource("1_lanym")
 29:63/0/physics_layer_0/angular_velocity = 0.0
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_pcgrh"]
-texture = ExtResource("2_7c54c")
+texture = ExtResource("2_l0t6k")
 5:1/0 = 0
 5:1/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 5:1/0/physics_layer_0/angular_velocity = 0.0
@@ -9808,7 +9809,7 @@ texture = ExtResource("2_7c54c")
 62:79/0/physics_layer_0/angular_velocity = 0.0
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_w3jft"]
-texture = ExtResource("3_t2uld")
+texture = ExtResource("3_wwsty")
 9:0/0 = 0
 9:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 9:0/0/physics_layer_0/angular_velocity = 0.0
@@ -14519,7 +14520,7 @@ motion_scale = Vector2(0.1, 0.1)
 [node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer4"]
 position = Vector2(479, 311.5)
 scale = Vector2(1.37917, 1.29792)
-texture = ExtResource("4_5rcqh")
+texture = ExtResource("4_1wu6q")
 
 [node name="ParallaxLayer3" type="ParallaxLayer" parent="ParallaxBackground"]
 motion_scale = Vector2(0.3, 0.3)
@@ -14527,7 +14528,7 @@ motion_scale = Vector2(0.3, 0.3)
 [node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer3"]
 position = Vector2(539.5, 313.5)
 scale = Vector2(1.47187, 1.30208)
-texture = ExtResource("5_n5ac2")
+texture = ExtResource("5_nqcf4")
 
 [node name="ParallaxLayer2" type="ParallaxLayer" parent="ParallaxBackground"]
 motion_scale = Vector2(0.6, 0.6)
@@ -14535,7 +14536,7 @@ motion_scale = Vector2(0.6, 0.6)
 [node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer2"]
 position = Vector2(541.5, 309)
 scale = Vector2(1.66979, 1.27917)
-texture = ExtResource("6_sf7d7")
+texture = ExtResource("6_3x2fh")
 
 [node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground"]
 motion_scale = Vector2(0.9, 0.9)
@@ -14543,9 +14544,9 @@ motion_scale = Vector2(0.9, 0.9)
 [node name="Static" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer"]
 position = Vector2(547, 345.75)
 scale = Vector2(1.6849, 1.67604)
-texture = ExtResource("7_puarb")
+texture = ExtResource("7_akevi")
 
-[node name="Player2D" parent="." instance=ExtResource("8_7jstp")]
+[node name="Player2D" parent="." instance=ExtResource("8_5lsdj")]
 position = Vector2(532, -276)
 
 [node name="Camera2D" type="Camera2D" parent="Player2D"]
@@ -14556,3 +14557,7 @@ limit_top = 0
 limit_right = 1150
 limit_bottom = 600
 editor_draw_limits = true
+
+[node name="Portal" parent="." instance=ExtResource("9_yu3vk")]
+position = Vector2(508, 633)
+escena = "res://scenes/game/maps_layers/Capa2_DarkForest.tscn"

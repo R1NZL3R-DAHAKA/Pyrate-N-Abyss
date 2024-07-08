@@ -1,0 +1,43 @@
+[gd_scene load_steps=3 format=3 uid="uid://bks1b38fw3uvn"]
+
+[ext_resource type="Texture2D" uid="uid://71dj3jt0oqi8" path="res://scenes/Menu/fondo.jpeg" id="1_41drp"]
+[ext_resource type="FontFile" uid="uid://5j301158oo42" path="res://Fonts/Kenney Blocks.ttf" id="2_52x8l"]
+
+[node name="EndDemo" type="Node2D"]
+
+[node name="Fondo" type="Sprite2D" parent="."]
+position = Vector2(578, 373)
+texture = ExtResource("1_41drp")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(575, 300)
+zoom = Vector2(1.15, 1.15)
+limit_left = 0
+limit_top = 0
+limit_right = 1150
+limit_bottom = 600
+editor_draw_limits = true
+
+[node name="RichTextLabel" type="RichTextLabel" parent="."]
+offset_left = 119.0
+offset_top = 29.0
+offset_right = 1095.0
+offset_bottom = 191.0
+theme_override_colors/default_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(1, 1, 1, 0)
+theme_override_fonts/normal_font = ExtResource("2_52x8l")
+theme_override_font_sizes/normal_font_size = 100
+text = "FIN DE LA DEMO
+"
+
+[node name="RichTextLabel2" type="RichTextLabel" parent="."]
+offset_left = 97.0
+offset_top = 498.0
+offset_right = 1073.0
+offset_bottom = 660.0
+theme_override_colors/default_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(1, 1, 1, 0)
+theme_override_fonts/normal_font = ExtResource("2_52x8l")
+theme_override_font_sizes/normal_font_size = 50
+text = "Gracias por jugar
+"
