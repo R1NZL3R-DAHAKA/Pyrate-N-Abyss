@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=3 uid="uid://bidoj5ypnr0wu"]
+[gd_scene load_steps=18 format=3 uid="uid://bidoj5ypnr0wu"]
 
 [ext_resource type="Texture2D" uid="uid://bkiiy1wi106q0" path="res://Assests/PixelFantasy_Caves_1.0/mainlev_build.png" id="1_nv8yw"]
 [ext_resource type="Texture2D" uid="uid://bk8i1rgie8ll5" path="res://Assests/PixelFantasy_Caves_1.0/props1.png" id="2_l0t6k"]
@@ -9,6 +9,8 @@
 [ext_resource type="Texture2D" uid="uid://wvb0k6oekh86" path="res://Assests/PixelFantasy_Caves_1.0/background4b.png" id="7_akevi"]
 [ext_resource type="PackedScene" uid="uid://dxa8oqufpi7d" path="res://scenes/game/MC/Player2D.tscn" id="8_5lsdj"]
 [ext_resource type="PackedScene" uid="uid://dh4gte1b3k8ld" path="res://scenes/game/maps_layers/portal.tscn" id="9_yu3vk"]
+[ext_resource type="PackedScene" uid="uid://duvx63ywk0jty" path="res://scenes/game/Enemies/Anfibio.tscn" id="10_j3574"]
+[ext_resource type="PackedScene" uid="uid://b4h3drun57cyq" path="res://objects/area_2d.tscn" id="11_f12rb"]
 
 [sub_resource type="TileMapPattern" id="TileMapPattern_oj0fj"]
 tile_data = PackedInt32Array(0, 1376256, 23, 65536, 1376256, 24, 1, 1441792, 23, 65537, 1441792, 24, 2, 1572864, 23, 65538, 1572864, 24, 3, 1638400, 23, 65539, 1638400, 24, 4, 1769472, 23, 65540, 1769472, 24, 5, 1835008, 23, 65541, 1835008, 24, 6, 1245184, 23, 65542, 1245184, 24, 7, 1114112, 23, 65543, 1114112, 24, 8, 917504, 23, 65544, 917504, 24, 9, 983040, 23, 65545, 983040, 24, 10, 1376256, 23, 65546, 1376256, 24, 11, 1441792, 23, 65547, 1441792, 24, 12, 1114112, 23, 65548, 1114112, 24, 13, 1572864, 23, 65549, 1572864, 24, 14, 1638400, 23, 65550, 1638400, 24, 15, 1769472, 23, 65551, 1769472, 24, 16, 1835008, 23, 65552, 1835008, 24, 17, 917504, 23, 65553, 917504, 24, 18, 1114112, 23, 65554, 1114112, 24, 19, 1376256, 23, 65555, 1376256, 24, 20, 917504, 23, 65556, 917504, 24, 21, 983040, 23, 65557, 983040, 24)
@@ -14561,3 +14563,49 @@ editor_draw_limits = true
 [node name="Portal" parent="." instance=ExtResource("9_yu3vk")]
 position = Vector2(508, 633)
 escena = "res://scenes/game/maps_layers/Capa2_DarkForest.tscn"
+
+[node name="Enemies" type="Node2D" parent="."]
+
+[node name="Anfibio" parent="Enemies" instance=ExtResource("10_j3574")]
+position = Vector2(207, 153)
+
+[node name="Anfibio2" parent="Enemies" instance=ExtResource("10_j3574")]
+position = Vector2(231, 525)
+
+[node name="Anfibio3" parent="Enemies" instance=ExtResource("10_j3574")]
+position = Vector2(776, 253)
+
+[node name="Anfibio4" parent="Enemies" instance=ExtResource("10_j3574")]
+position = Vector2(1088, 525)
+
+[node name="Anfibio5" parent="Enemies" instance=ExtResource("10_j3574")]
+position = Vector2(812, 520)
+
+[node name="Coins" type="Node2D" parent="."]
+
+[node name="Coin" parent="Coins" instance=ExtResource("11_f12rb")]
+position = Vector2(131, 322)
+
+[node name="Coin2" parent="Coins" instance=ExtResource("11_f12rb")]
+position = Vector2(1129, 528)
+
+[node name="Coin3" parent="Coins" instance=ExtResource("11_f12rb")]
+position = Vector2(877, 145)
+
+[node name="Coin4" parent="Coins" instance=ExtResource("11_f12rb")]
+position = Vector2(588, 128)
+
+[node name="Coin5" parent="Coins" instance=ExtResource("11_f12rb")]
+position = Vector2(466, 127)
+
+[node name="Coin6" parent="Coins" instance=ExtResource("11_f12rb")]
+position = Vector2(474, 542)
+
+[node name="Coin7" parent="Coins" instance=ExtResource("11_f12rb")]
+position = Vector2(562, 446)
+
+[node name="Coin8" parent="Coins" instance=ExtResource("11_f12rb")]
+position = Vector2(674, 542)
+
+[node name="Coin9" parent="Coins" instance=ExtResource("11_f12rb")]
+position = Vector2(20, 528)

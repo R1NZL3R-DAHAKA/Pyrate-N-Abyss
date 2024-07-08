@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=3 uid="uid://bo3dvdo8tfxr2"]
+[gd_scene load_steps=17 format=3 uid="uid://bo3dvdo8tfxr2"]
 
 [ext_resource type="Texture2D" uid="uid://b520nndoe5l8v" path="res://Assests/Foreground tilesets/tileset normal1.png" id="1_0qsbx"]
 [ext_resource type="Texture2D" uid="uid://cggvqy6tfndkv" path="res://Assests/Foreground tilesets/Tileset.png" id="2_3jv7u"]
@@ -9,6 +9,7 @@
 [ext_resource type="Texture2D" uid="uid://dkf0881hwh5y0" path="res://Assests/Background/BGFront.png" id="7_541v7"]
 [ext_resource type="PackedScene" uid="uid://dxa8oqufpi7d" path="res://scenes/game/MC/Player2D.tscn" id="8_vuuxr"]
 [ext_resource type="PackedScene" uid="uid://b4h3drun57cyq" path="res://objects/area_2d.tscn" id="10_ek47v"]
+[ext_resource type="PackedScene" uid="uid://duvx63ywk0jty" path="res://scenes/game/Enemies/Anfibio.tscn" id="11_inofu"]
 [ext_resource type="PackedScene" uid="uid://dh4gte1b3k8ld" path="res://scenes/game/maps_layers/portal.tscn" id="11_t0saf"]
 [ext_resource type="PackedScene" uid="uid://b6cvdbxhv4iau" path="res://scenes/game/Enemies/monster.tscn" id="12_71w5k"]
 
@@ -1769,6 +1770,11 @@ layer_1/tile_data = PackedInt32Array(1441901, 1310721, 6, 1310830, 1310721, 3, 1
 
 [node name="ParallaxBackground" type="ParallaxBackground" parent="."]
 
+[node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground"]
+position = Vector2(926, -32)
+scale = Vector2(16.567, 3.52084)
+texture = ExtResource("6_spp77")
+
 [node name="ParallaxLayer-Clouds2" type="ParallaxLayer" parent="ParallaxBackground"]
 position = Vector2(4, -114)
 motion_scale = Vector2(0.3, 0.3)
@@ -1831,67 +1837,78 @@ editor_draw_limits = true
 position = Vector2(859, 739)
 escena = "res://scenes/game/maps_layers/Capa1_RockyCaves.tscn"
 
-[node name="Coin21" type="Node2D" parent="."]
+[node name="Coins" type="Node2D" parent="."]
 
-[node name="Coin20" parent="Coin21" instance=ExtResource("10_ek47v")]
+[node name="Coin20" parent="Coins" instance=ExtResource("10_ek47v")]
 position = Vector2(18, 136)
 
-[node name="Coin19" parent="Coin21" instance=ExtResource("10_ek47v")]
+[node name="Coin19" parent="Coins" instance=ExtResource("10_ek47v")]
 position = Vector2(1528, 196)
 
-[node name="Coin18" parent="Coin21" instance=ExtResource("10_ek47v")]
+[node name="Coin18" parent="Coins" instance=ExtResource("10_ek47v")]
 position = Vector2(1410, 310)
 
-[node name="Coin11" parent="Coin21" instance=ExtResource("10_ek47v")]
+[node name="Coin11" parent="Coins" instance=ExtResource("10_ek47v")]
 position = Vector2(507, 297)
 
-[node name="Coin12" parent="Coin21" instance=ExtResource("10_ek47v")]
+[node name="Coin12" parent="Coins" instance=ExtResource("10_ek47v")]
 position = Vector2(618, 186)
 
-[node name="Coin13" parent="Coin21" instance=ExtResource("10_ek47v")]
+[node name="Coin13" parent="Coins" instance=ExtResource("10_ek47v")]
 position = Vector2(618, 158)
 
-[node name="Coin14" parent="Coin21" instance=ExtResource("10_ek47v")]
+[node name="Coin14" parent="Coins" instance=ExtResource("10_ek47v")]
 position = Vector2(1272, 203)
 
-[node name="Coin15" parent="Coin21" instance=ExtResource("10_ek47v")]
+[node name="Coin15" parent="Coins" instance=ExtResource("10_ek47v")]
 position = Vector2(1638, 278)
 
-[node name="Coin16" parent="Coin21" instance=ExtResource("10_ek47v")]
+[node name="Coin16" parent="Coins" instance=ExtResource("10_ek47v")]
 position = Vector2(1784, 133)
 
-[node name="Coin17" parent="Coin21" instance=ExtResource("10_ek47v")]
+[node name="Coin17" parent="Coins" instance=ExtResource("10_ek47v")]
 position = Vector2(1574, 406)
 
-[node name="Coin" parent="Coin21" instance=ExtResource("10_ek47v")]
+[node name="Coin" parent="Coins" instance=ExtResource("10_ek47v")]
 position = Vector2(185, 310)
 
-[node name="Coin2" parent="Coin21" instance=ExtResource("10_ek47v")]
+[node name="Coin2" parent="Coins" instance=ExtResource("10_ek47v")]
 position = Vector2(314, 392)
 
-[node name="Coin3" parent="Coin21" instance=ExtResource("10_ek47v")]
+[node name="Coin3" parent="Coins" instance=ExtResource("10_ek47v")]
 position = Vector2(313, 363)
 
-[node name="Coin4" parent="Coin21" instance=ExtResource("10_ek47v")]
+[node name="Coin4" parent="Coins" instance=ExtResource("10_ek47v")]
 position = Vector2(314, 181)
 
-[node name="Coin5" parent="Coin21" instance=ExtResource("10_ek47v")]
+[node name="Coin5" parent="Coins" instance=ExtResource("10_ek47v")]
 position = Vector2(313, 150)
 
-[node name="Coin6" parent="Coin21" instance=ExtResource("10_ek47v")]
+[node name="Coin6" parent="Coins" instance=ExtResource("10_ek47v")]
 position = Vector2(934, 254)
 
-[node name="Coin7" parent="Coin21" instance=ExtResource("10_ek47v")]
+[node name="Coin7" parent="Coins" instance=ExtResource("10_ek47v")]
 position = Vector2(839, 326)
 
-[node name="Coin8" parent="Coin21" instance=ExtResource("10_ek47v")]
+[node name="Coin8" parent="Coins" instance=ExtResource("10_ek47v")]
 position = Vector2(740, 390)
 
-[node name="Coin9" parent="Coin21" instance=ExtResource("10_ek47v")]
+[node name="Coin9" parent="Coins" instance=ExtResource("10_ek47v")]
 position = Vector2(1033, 324)
 
-[node name="Coin10" parent="Coin21" instance=ExtResource("10_ek47v")]
+[node name="Coin10" parent="Coins" instance=ExtResource("10_ek47v")]
 position = Vector2(1127, 390)
 
-[node name="Monster" parent="." instance=ExtResource("12_71w5k")]
+[node name="Enemies" type="Node2D" parent="."]
+
+[node name="Anfibio" parent="Enemies" instance=ExtResource("11_inofu")]
+position = Vector2(650, 489)
+
+[node name="Anfibio2" parent="Enemies" instance=ExtResource("11_inofu")]
+position = Vector2(1093, 489)
+
+[node name="Anfibio3" parent="Enemies" instance=ExtResource("11_inofu")]
+position = Vector2(614, 185)
+
+[node name="Monster" parent="Enemies" instance=ExtResource("12_71w5k")]
 position = Vector2(363, 488)
