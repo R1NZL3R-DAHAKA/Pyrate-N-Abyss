@@ -1,7 +1,8 @@
-[gd_scene load_steps=20 format=3 uid="uid://bo3dvdo8tfxr2"]
+[gd_scene load_steps=21 format=3 uid="uid://bo3dvdo8tfxr2"]
 
 [ext_resource type="Texture2D" uid="uid://b520nndoe5l8v" path="res://Assests/Foreground tilesets/tileset normal1.png" id="1_0qsbx"]
 [ext_resource type="Texture2D" uid="uid://cggvqy6tfndkv" path="res://Assests/Foreground tilesets/Tileset.png" id="2_3jv7u"]
+[ext_resource type="Texture2D" uid="uid://cwmmvtoglf4ho" path="res://Assests/GothicVaniaSet/environment/props-sliced/street-lamp.png" id="3_c5huy"]
 [ext_resource type="Texture2D" uid="uid://bmb4aownn6abf" path="res://Assests/Foreground tilesets/Trees.png" id="3_h4fdg"]
 [ext_resource type="Texture2D" uid="uid://djp1vh5m2gcxp" path="res://Assests/Background/clouds.png" id="4_aofy8"]
 [ext_resource type="Texture2D" uid="uid://o7olbwf72gcu" path="res://Assests/Background/CloudsFront.png" id="5_rt5j8"]
@@ -13,8 +14,8 @@
 [ext_resource type="PackedScene" uid="uid://dh4gte1b3k8ld" path="res://scenes/game/maps_layers/portal.tscn" id="11_t0saf"]
 [ext_resource type="PackedScene" uid="uid://b6cvdbxhv4iau" path="res://scenes/game/Enemies/monster.tscn" id="12_71w5k"]
 [ext_resource type="Texture2D" uid="uid://5hsebgkhhnw5" path="res://Assests/GothicVaniaSet/environment/props-sliced/barrel.png" id="13_g2g16"]
-[ext_resource type="Texture2D" uid="uid://d2r5emh7f6wrm" path="res://Assests/GothicVaniaSet/environment/props-sliced/house-a.png" id="14_aspst"]
 [ext_resource type="Texture2D" uid="uid://c6472eja0u28j" path="res://Assests/GothicVaniaSet/environment/props-sliced/house-b.png" id="15_hjp5n"]
+[ext_resource type="FontFile" uid="uid://5j301158oo42" path="res://Fonts/Kenney Blocks.ttf" id="16_anjfj"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_budhl"]
 texture = ExtResource("1_0qsbx")
@@ -1765,10 +1766,35 @@ sources/3 = SubResource("TileSetAtlasSource_ruua4")
 
 [node name="Town" type="Node2D" parent="."]
 
-[node name="House-a" type="Sprite2D" parent="Town"]
-position = Vector2(567, 448)
-scale = Vector2(0.221726, 0.199097)
-texture = ExtResource("14_aspst")
+[node name="Barrel" type="Sprite2D" parent="Town"]
+position = Vector2(1517, 495)
+texture = ExtResource("13_g2g16")
+
+[node name="House-b" type="Sprite2D" parent="Town"]
+position = Vector2(312, 446)
+scale = Vector2(0.514286, 0.514286)
+texture = ExtResource("15_hjp5n")
+
+[node name="House-b2" type="Sprite2D" parent="Town"]
+position = Vector2(1577, 460)
+scale = Vector2(0.419048, 0.419048)
+texture = ExtResource("15_hjp5n")
+
+[node name="Street-lamp" type="Sprite2D" parent="Town"]
+position = Vector2(804, 458)
+texture = ExtResource("3_c5huy")
+
+[node name="Street-lamp2" type="Sprite2D" parent="Town"]
+position = Vector2(1040, 456)
+texture = ExtResource("3_c5huy")
+
+[node name="Street-lamp3" type="Sprite2D" parent="Town"]
+position = Vector2(491, 458)
+texture = ExtResource("3_c5huy")
+
+[node name="Street-lamp4" type="Sprite2D" parent="Town"]
+position = Vector2(1434, 461)
+texture = ExtResource("3_c5huy")
 
 [node name="TileMap" type="TileMap" parent="."]
 tile_set = SubResource("TileSet_l6dei")
@@ -1780,6 +1806,14 @@ layer_1/tile_data = PackedInt32Array(1441901, 1310721, 6, 1310830, 1310721, 3, 1
 
 [node name="ParallaxBackground" type="ParallaxBackground" parent="."]
 
+[node name="ParallaxLayer2" type="ParallaxLayer" parent="ParallaxBackground"]
+motion_scale = Vector2(0.1, 0.1)
+
+[node name="Sprite2D2" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer2"]
+position = Vector2(917, 58)
+scale = Vector2(3.41358, 1.98729)
+texture = ExtResource("4_aofy8")
+
 [node name="ParallaxLayer-Clouds2" type="ParallaxLayer" parent="ParallaxBackground"]
 position = Vector2(4, -114)
 motion_scale = Vector2(0.3, 0.3)
@@ -1788,19 +1822,6 @@ motion_scale = Vector2(0.3, 0.3)
 position = Vector2(852.873, 428)
 scale = Vector2(3.15856, 3.23093)
 texture = ExtResource("4_aofy8")
-
-[node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer-Clouds2/Sprite2D"]
-position = Vector2(257.111, 255.963)
-scale = Vector2(3.17373, 3.23093)
-
-[node name="Sprite2D2" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer-Clouds2/Sprite2D"]
-position = Vector2(20.4638, -55.5567)
-scale = Vector2(1.08074, 0.615083)
-texture = ExtResource("4_aofy8")
-
-[node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer-Clouds2/Sprite2D/Sprite2D2"]
-position = Vector2(257.111, 255.963)
-scale = Vector2(3.17373, 3.23093)
 
 [node name="ParallaxLayer-Clouds1" type="ParallaxLayer" parent="ParallaxBackground"]
 position = Vector2(4, 163)
@@ -1918,10 +1939,25 @@ position = Vector2(614, 185)
 [node name="Monster" parent="Enemies" instance=ExtResource("12_71w5k")]
 position = Vector2(363, 488)
 
-[node name="Barrel" type="Sprite2D" parent="."]
-position = Vector2(1517, 495)
-texture = ExtResource("13_g2g16")
+[node name="RichTextLabel2" type="RichTextLabel" parent="."]
+offset_left = 130.0
+offset_top = 448.0
+offset_right = 311.0
+offset_bottom = 475.0
+theme_override_colors/default_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(1, 1, 1, 0)
+theme_override_fonts/normal_font = ExtResource("16_anjfj")
+theme_override_font_sizes/normal_font_size = 15
+text = "cAPA 0: ISLA
+"
 
-[node name="House-b" type="Sprite2D" parent="."]
-position = Vector2(775, 322)
-texture = ExtResource("15_hjp5n")
+[node name="RichTextLabel3" type="RichTextLabel" parent="."]
+offset_left = 858.0
+offset_top = 535.0
+offset_right = 1039.0
+offset_bottom = 562.0
+theme_override_colors/default_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(1, 1, 1, 0)
+theme_override_fonts/normal_font = ExtResource("16_anjfj")
+theme_override_font_sizes/normal_font_size = 15
+text = "entrada capa 1"
