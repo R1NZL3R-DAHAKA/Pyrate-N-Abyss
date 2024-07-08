@@ -14521,7 +14521,7 @@ layer_1/tile_data = PackedInt32Array(2097148, 65538, 60, 2162684, 65538, 61, 222
 motion_scale = Vector2(0.1, 0.1)
 
 [node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer4"]
-position = Vector2(479, 311.5)
+position = Vector2(520, 258)
 scale = Vector2(1.37917, 1.29792)
 texture = ExtResource("4_1wu6q")
 
@@ -14529,7 +14529,7 @@ texture = ExtResource("4_1wu6q")
 motion_scale = Vector2(0.3, 0.3)
 
 [node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer3"]
-position = Vector2(539.5, 313.5)
+position = Vector2(529, 246)
 scale = Vector2(1.47187, 1.30208)
 texture = ExtResource("5_nqcf4")
 
@@ -14537,7 +14537,7 @@ texture = ExtResource("5_nqcf4")
 motion_scale = Vector2(0.6, 0.6)
 
 [node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer2"]
-position = Vector2(541.5, 309)
+position = Vector2(536, 263)
 scale = Vector2(1.66979, 1.27917)
 texture = ExtResource("6_3x2fh")
 
@@ -14545,8 +14545,8 @@ texture = ExtResource("6_3x2fh")
 motion_scale = Vector2(0.9, 0.9)
 
 [node name="Static" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer"]
-position = Vector2(547, 345.75)
-scale = Vector2(1.6849, 1.67604)
+position = Vector2(540, 307)
+scale = Vector2(1.4807, 1.47292)
 texture = ExtResource("7_akevi")
 
 [node name="Player2D" parent="." instance=ExtResource("8_5lsdj")]
