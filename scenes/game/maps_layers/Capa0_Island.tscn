@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=3 uid="uid://bo3dvdo8tfxr2"]
+[gd_scene load_steps=20 format=3 uid="uid://bo3dvdo8tfxr2"]
 
 [ext_resource type="Texture2D" uid="uid://b520nndoe5l8v" path="res://Assests/Foreground tilesets/tileset normal1.png" id="1_0qsbx"]
 [ext_resource type="Texture2D" uid="uid://cggvqy6tfndkv" path="res://Assests/Foreground tilesets/Tileset.png" id="2_3jv7u"]
@@ -12,6 +12,9 @@
 [ext_resource type="PackedScene" uid="uid://duvx63ywk0jty" path="res://scenes/game/Enemies/Anfibio.tscn" id="11_inofu"]
 [ext_resource type="PackedScene" uid="uid://dh4gte1b3k8ld" path="res://scenes/game/maps_layers/portal.tscn" id="11_t0saf"]
 [ext_resource type="PackedScene" uid="uid://b6cvdbxhv4iau" path="res://scenes/game/Enemies/monster.tscn" id="12_71w5k"]
+[ext_resource type="Texture2D" uid="uid://5hsebgkhhnw5" path="res://Assests/GothicVaniaSet/environment/props-sliced/barrel.png" id="13_g2g16"]
+[ext_resource type="Texture2D" uid="uid://d2r5emh7f6wrm" path="res://Assests/GothicVaniaSet/environment/props-sliced/house-a.png" id="14_aspst"]
+[ext_resource type="Texture2D" uid="uid://c6472eja0u28j" path="res://Assests/GothicVaniaSet/environment/props-sliced/house-b.png" id="15_hjp5n"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_budhl"]
 texture = ExtResource("1_0qsbx")
@@ -1760,6 +1763,13 @@ sources/3 = SubResource("TileSetAtlasSource_ruua4")
 
 [node name="Island" type="Node2D"]
 
+[node name="Town" type="Node2D" parent="."]
+
+[node name="House-a" type="Sprite2D" parent="Town"]
+position = Vector2(567, 448)
+scale = Vector2(0.221726, 0.199097)
+texture = ExtResource("14_aspst")
+
 [node name="TileMap" type="TileMap" parent="."]
 tile_set = SubResource("TileSet_l6dei")
 rendering_quadrant_size = 8
@@ -1769,11 +1779,6 @@ layer_0/tile_data = PackedInt32Array(1245184, 2031617, 15, 1310720, 2031617, 14,
 layer_1/tile_data = PackedInt32Array(1441901, 1310721, 6, 1310830, 1310721, 3, 1376366, 1310721, 4, 1441902, 1376257, 6, 1245294, 1245185, 6, 1114223, 1310721, 6, 1179759, 1310721, 5, 1245295, 1310721, 6, 1245293, 1245185, 2, 1310829, 1245185, 3, 1376365, 1245185, 4, 1179758, 1245185, 5, 1048686, 1245185, 5, 1114222, 1245185, 6, 1048687, 1310721, 5, 917614, 1245185, 5, 983150, 1245185, 6, 917615, 1310721, 5, 983151, 1310721, 6, 786542, 1245185, 6, 852078, 1245185, 6, 786543, 1310721, 6, 852079, 1310721, 6, 721006, 1245185, 5, 721007, 1310721, 5)
 
 [node name="ParallaxBackground" type="ParallaxBackground" parent="."]
-
-[node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground"]
-position = Vector2(926, -32)
-scale = Vector2(16.567, 3.52084)
-texture = ExtResource("6_spp77")
 
 [node name="ParallaxLayer-Clouds2" type="ParallaxLayer" parent="ParallaxBackground"]
 position = Vector2(4, -114)
@@ -1912,3 +1917,11 @@ position = Vector2(614, 185)
 
 [node name="Monster" parent="Enemies" instance=ExtResource("12_71w5k")]
 position = Vector2(363, 488)
+
+[node name="Barrel" type="Sprite2D" parent="."]
+position = Vector2(1517, 495)
+texture = ExtResource("13_g2g16")
+
+[node name="House-b" type="Sprite2D" parent="."]
+position = Vector2(775, 322)
+texture = ExtResource("15_hjp5n")
