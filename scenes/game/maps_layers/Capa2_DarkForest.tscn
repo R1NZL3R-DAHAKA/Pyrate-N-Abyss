@@ -33423,24 +33423,24 @@ editor_draw_limits = true
 motion_scale = Vector2(0.4, 0.4)
 
 [node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer3"]
-position = Vector2(638, 382.75)
-scale = Vector2(0.413086, 0.216675)
+position = Vector2(638, 319.5)
+scale = Vector2(0.413086, 0.185791)
 texture = ExtResource("3_ipaqy")
 
 [node name="ParallaxLayer2" type="ParallaxLayer" parent="ParallaxBackground"]
 motion_scale = Vector2(0.6, 0.6)
 
 [node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer2"]
-position = Vector2(577.5, 289.5)
-scale = Vector2(0.374756, 0.193115)
+position = Vector2(577.5, 314)
+scale = Vector2(0.374756, 0.205078)
 texture = ExtResource("4_777t2")
 
 [node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground"]
 motion_scale = Vector2(0.9, 0.9)
 
 [node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer"]
-position = Vector2(594, 296)
-scale = Vector2(0.327637, 0.217773)
+position = Vector2(594, 303.5)
+scale = Vector2(0.327637, 0.177979)
 texture = ExtResource("5_4hdnh")
 
 [node name="Portal" parent="." instance=ExtResource("3_ontym")]
